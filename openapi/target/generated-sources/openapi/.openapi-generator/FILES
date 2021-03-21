@@ -1,7 +1,0 @@
-README.md
-pom.xml
-src/main/java/com/mre/ping/rest/RFC3339DateFormat.java
-src/main/java/com/mre/ping/rest/controller/ApiUtil.java
-src/main/java/com/mre/ping/rest/controller/PublicApi.java
-src/main/java/com/mre/ping/rest/model/PingResponse.java
-src/main/resources/application.properties
