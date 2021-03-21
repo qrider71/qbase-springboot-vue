@@ -1,0 +1,8 @@
+image:
+  file: .gitpod.Dockerfile
+
+vscode:
+  extensions:
+    - Pivotal.vscode-spring-boot@1.20.0:jaH7mimG3KKfktrKqHw8Kg==
+    - cool2k.vscode-lombok@1.0.2:e816/wZO588Jp8PN58Wj6g==
+    

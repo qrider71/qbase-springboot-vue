@@ -1,0 +1,108 @@
+openapi: 3.0.0
+# Added by API Auto Mocking Plugin
+servers:
+# Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/mreith/ping/1.0.0
+ 
+info:
+  description: >-
+    This API is for testing and evaluation purpose only.
+    It defines simple ping operations which just return a simple response.
+    The API can be used as template for more complex APIs or for developing
+    a simple server for system and technology evaluation.
+  version: "1.0.0"
+  title: Simple Ping API
+  contact:
+    name: Markus Reith
+    url: https://github.com/qrider71
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+    
+tags:
+  - name: public
+    description: Operations available to the public
+
+paths:
+  /ping:
+    get:
+      tags:
+        - public
+      summary: >-
+        simple ping command takes an optional message and
+        and optional repeat number and returns in the response
+        the specified message the specified number of times.
+      operationId: ping
+      description: >-
+        The ping operation 
+      parameters:
+      - $ref: '#/components/parameters/messageQuery'
+      - $ref: '#/components/parameters/repeatQuery'
+      responses:
+        '200':
+          description: ping successfully executed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PingResponse'
+        '400':
+          description: invalid request data
+        '500':
+          description: Internal server Error
+
+components:
+  schemas:
+    Message:
+      description: ping message
+      type: string
+      nullable: false
+      example: This is a sample ping message
+      default: PING
+      
+      
+    PingResponse:
+      description: The reponse fromn a ping request
+      type: object
+      properties:
+        timestamp:
+          description: execution timestamp
+          type: string
+          nullable: false
+          format: date-time
+          
+        hostname:
+          description: >- 
+            Name of the host where on which ping was executed.
+            It can be empty if name could not be determined.
+          type: string
+          nullable: true
+          
+        messages:
+          description: list with returned messages from ping
+          type: array
+          nullable: false
+          minItems: 0
+          items:
+            $ref: '#/components/schemas/Message'
+      
+  parameters:
+    messageQuery:
+      description: The message to be returned
+      name: message
+      in: query
+      required: false
+      schema:
+        $ref: '#/components/schemas/Message'
+        
+    repeatQuery:
+      description: Specifies how many times the message shall be repeated
+      name: repeat
+      in: query
+      required: false
+      schema:
+        type: integer
+        nullable: false
+        minimum: 0
+        default: 1
+        example: 1

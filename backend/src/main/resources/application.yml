@@ -1,0 +1,42 @@
+server:
+  servlet:
+    context-path: /
+  compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json
+    min-response-size: 1024
+  http2:
+    enabled: true
+  port: 8098
+
+spring:
+  application:
+    name: ping-springboot
+  profiles:
+    active: ${ACTIVE_PROFILES:}
+
+springdoc:
+  api-docs:
+    groups:
+      enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
+    display-request-duration: true
+    groups-order: DESC
+  show-actuator: true
+  group-configs:
+    - group: ping
+      packages-to-scan: com.mre.ping.rest.controller
+
+logging:
+  level:
+    org:
+      springframework:
+        web:
+          filter:
+            CommonsRequestLoggingFilter: DEBUG
+
+management:
+  endpoint:
+    health:
+      show-details: "ALWAYS"
