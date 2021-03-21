@@ -1,0 +1,14 @@
+<!-- https://mvnrepository.com/artifact/org.openapitools/openapi-generator-maven-plugin -->
+<dependency>
+    <groupId>org.openapitools</groupId>
+    <artifactId>openapi-generator-maven-plugin</artifactId>
+    <version>5.1.0</version>
+    <scope>provided</scope>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.openapitools/openapi-generator-maven-plugin -->
+<dependency>
+    <groupId>org.openapitools</groupId>
+    <artifactId>openapi-generator-maven-plugin</artifactId>
+    <version>5.1.0</version>
+    <scope>provided</scope>
+</dependency>
