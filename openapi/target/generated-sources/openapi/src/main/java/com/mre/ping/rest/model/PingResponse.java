@@ -17,7 +17,7 @@ import javax.validation.constraints.*;
  * The reponse fromn a ping request
  */
 @ApiModel(description = "The reponse fromn a ping request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2021-03-21T16:39:08.089283+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2021-03-21T17:41:51.691431+01:00[Europe/Berlin]")
 public class PingResponse  implements Serializable {
   private static final long serialVersionUID = 1L;
 

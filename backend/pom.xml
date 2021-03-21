@@ -24,14 +24,19 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>com.mre.ping</groupId>
-			<artifactId>ping-springboot-openapi</artifactId>
+			<groupId>com.mre.qbase-springboot-vue</groupId>
+			<artifactId>openapi</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webflux</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
 		<dependency>
