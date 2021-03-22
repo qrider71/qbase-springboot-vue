@@ -47,30 +47,12 @@ public class RestConfig {
     }
 
     @Bean
-    public ObjectMapper createObjectMapper(DateFormat dateFormat) {
+    public ObjectMapper createObjectMapper() {
         ObjectMapper mapper = new ObjectMapper();
-        mapper.setDateFormat(dateFormat);
         mapper.registerModule(new JavaTimeModule());
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         JsonNullableModule jnm = new JsonNullableModule();
         mapper.registerModule(jnm);
         return mapper;
-    }
-
-    @Bean
-    public DateFormat createDefaultDateFormat() {
-        DateFormat dateFormat = new RFC3339DateFormat();
-        dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
-        return dateFormat;
-    }
-
-    public static class RFC3339DateFormat extends ISO8601DateFormat {
-        // Same as ISO8601DateFormat but serializing milliseconds.
-        @Override
-        public StringBuffer format(Date date, StringBuffer toAppendTo, FieldPosition fieldPosition) {
-            String value = ISO8601Utils.format(date, true);
-            toAppendTo.append(value);
-            return toAppendTo;
-        }
     }
 }

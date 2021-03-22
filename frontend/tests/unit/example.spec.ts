@@ -1,13 +1,10 @@
 import { expect } from 'chai';
 import { shallowMount } from '@vue/test-utils';
-import HelloWorld from '@/components/HelloWorld.vue';
+import PingView from '@/components/PingView.vue';
 
-describe('HelloWorld.vue', () => {
-  it('renders props.msg when passed', () => {
-    const msg = 'new message';
-    const wrapper = shallowMount(HelloWorld, {
-      propsData: { msg },
-    });
-    expect(wrapper.text()).to.include(msg);
+describe('PingView.vue', () => {
+  it('displays ping view', () => {
+    const wrapper = shallowMount(PingView, {});
+    expect(wrapper.text()).to.include('Ping');
   });
 });

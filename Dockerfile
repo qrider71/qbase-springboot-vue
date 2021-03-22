@@ -7,7 +7,7 @@ ADD . /qbase-springboot-vue
 WORKDIR /qbase-springboot-vue
 
 # Run Maven build
-RUN mvn clean install
+RUN mvn clean install -DskipTests
 
 # Just using the build artifact and then removing the build-container
 FROM openjdk:11-jdk

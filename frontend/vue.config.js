@@ -12,6 +12,9 @@ module.exports = {
       },
     },
   },
+  configureWebpack: {
+    devtool: 'source-map',
+  },
   // Change build paths to make them Maven compatible
   // see https://cli.vuejs.org/config/
   outputDir: 'target/dist',
