@@ -22,6 +22,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import axios from 'axios';
+import PingApi from './PingApi';
 
 const AXIOS = axios.create({
   baseURL: '/api',
@@ -43,6 +44,7 @@ export default class PingView extends Vue {
   mouseEvent?: MouseEvent;
 
   updateMessage($event: { target: { value: string } }): void {
+    PingApi.ping();
     this.msg = $event.target.value;
   }
 

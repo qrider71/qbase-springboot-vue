@@ -3,6 +3,9 @@ package com.mre.ping;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * Main class
+ */
 @SpringBootApplication(scanBasePackages = {"com.mre.ping"})
 public class PingApplication {
 
