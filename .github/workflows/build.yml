@@ -16,6 +16,7 @@ jobs:
       with:
         java-version: ${{ matrix.java-version }}
     - run: mvn -B install --no-transfer-progress
+    - run: mvn -B deploy --no-transfer-progress
 
   coverage:
     needs: build
