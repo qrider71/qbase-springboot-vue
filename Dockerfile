@@ -10,7 +10,12 @@ WORKDIR /qbase-springboot-vue
 RUN mvn clean install -DskipTests
 
 # Just using the build artifact and then removing the build-container
-FROM openjdk:11-jdk
+FROM registry.access.redhat.com/ubi8/ubi-minimal:latest
+
+ARG JAVA_PACKAGE=java-11-openjdk-headless
+RUN microdnf install curl ca-certificates ${JAVA_PACKAGE} \
+    && microdnf update \
+    && microdnf clean all
 
 MAINTAINER Markus Reith
 
